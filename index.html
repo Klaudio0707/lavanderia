@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Estoque e Máquinas de Lavanderia</title>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Controle de Estoque e Máquinas de Lavanderia</h1>
+    <h2>Controle de Estoque</h2>
+    <label for="product-name">Nome do Produto:</label>
+    <input type="text" id="product-name" placeholder="Digite o nome do produto">
+    <label for="product-quantity">Quantidade:</label>
+    <input type="number" id="product-quantity" placeholder="Digite a quantidade">
+    
+    <button id="buttonProduto">Adicionar ao Estoque</button>
+    <button onclick="removeStock()">Remover do Estoque</button>
+    <h2>Alerta de Estoque Baixo</h2>
+    <table id="tabelaP">
+<tr>
+    <th>Descrição</th>
+    <th>Quantidade</th>
+    
+</tr>
+</table>
+<table id="tabelaProduto">
+    <thead>
+<tr>
+
+<td></td>
+<td></td>
+
+</tr>    
+</thead>
+</table>
+    <ul id="low-stock-alert">
+        <h3>Total do Estoque: <span id="total-stock"></span></h3>
+    </ul>
+
+    <h2>Cadastro de Máquinas de Lavar</h2>
+    <label for="machine-name">Nome:</label>
+    <input type="text" id="machine-name" placeholder="Digite o nome da máquina">
+    <label for="machine-rate">Tarifa por hora:</label>
+    <input type="number" id="machine-rate" placeholder="Digite a tarifa por hora">
+    <button onclick="addMachine()">Cadastrar Máquina</button>
+
+    <h2>Cadastro de Clientes</h2>
+    <label for="customer-name">Nome:</label>
+    <input type="text" id="customer-name" placeholder="Digite o nome do cliente">
+    <label for="customer-email">E-mail:</label>
+    <input type="email" id="customer-email" placeholder="Digite o e-mail do cliente">
+    <label for="customer-telefone">telefone:</label>
+    <input type="telefone" id="customer-telefone" placeholder="Digite o telefone do cliente">
+    <button onclick="addCustomer()">Cadastrar Cliente</button>
+
+    <h2>Agendamento do Uso da Máquina de Lavar</h2>
+    <label for="machine-select">Selecione uma máquina:</label>
+    <select id="machine-select">
+    </select>
+    <label for="usage-time">Tempo de Uso (em horas):</label>
+    <input type="number" id="usage-time" placeholder="Digite o tempo de uso">
+    <label for="customer-select">Selecione um cliente:</label>
+    <select id="customer-select">
+    </select>
+    <button onclick="scheduleUsage()">Agendar Uso</button>
+
+    <h2>Promoções e Descontos</h2>
+    <p>Clientes cadastrados receberão descontos especiais em seu aniversário!</p>
+
+    
+</body>
+</html>
