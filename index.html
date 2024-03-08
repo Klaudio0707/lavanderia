@@ -3,22 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Controle de Estoque e Máquinas de Lavanderia</title>
-    <script src="index.js"></script>
+    <title id>Controle de Estoque e Máquinas de Lavanderia</title>
+    <script src="index.js" defer></script>
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
+    <div id="container">
+    <div class="ControleStyle">
     <h1>Controle de Estoque e Máquinas de Lavanderia</h1>
     <h2>Controle de Estoque</h2>
-    <label for="product-name">Nome do Produto:</label>
-    <input type="text" id="product-name" placeholder="Digite o nome do produto">
-    <label for="product-quantity">Quantidade:</label>
-    <input type="number" id="product-quantity" placeholder="Digite a quantidade">
+    <label for="product-name">Nome do Produto:</label><br>
+    <input type="text" id="product-name" placeholder="Digite o nome do produto"><br>
+    <label for="product-quantity">Quantidade:</label><br>
+    <input type="number" id="product-quantity" placeholder="Digite a quantidade"><br>
     
     <button id="buttonProduto">Adicionar ao Estoque</button>
-    <button onclick="removeStock()">Remover do Estoque</button>
-    <h2>Alerta de Estoque Baixo</h2>
+    <button id="buttonRemover">Remover do Estoque</button><br>
+    <h2>Estoque</h2>
     <table id="tabelaP">
 <tr>
     <th>Descrição</th>
@@ -37,17 +40,21 @@
 </thead>
 </table>
     <ul id="low-stock-alert">
-        <h3>Total do Estoque: <span id="total-stock"></span></h3>
+        <div>Total do Estoque: <span id="total-stock"></span></div>
     </ul>
 
-    <h2>Cadastro de Máquinas de Lavar</h2>
+</div>
+
+    <h1>Cadastro de Máquinas de Lavar</h1>
     <label for="machine-name">Nome:</label>
     <input type="text" id="machine-name" placeholder="Digite o nome da máquina">
     <label for="machine-rate">Tarifa por hora:</label>
     <input type="number" id="machine-rate" placeholder="Digite a tarifa por hora">
     <button onclick="addMachine()">Cadastrar Máquina</button>
 
-    <h2>Cadastro de Clientes</h2>
+<div class="cadastroStyle">
+
+    <h1>Cadastro de Clientes</h1>
     <label for="customer-name">Nome:</label>
     <input type="text" id="customer-name" placeholder="Digite o nome do cliente">
     <label for="customer-email">E-mail:</label>
@@ -55,8 +62,11 @@
     <label for="customer-telefone">telefone:</label>
     <input type="telefone" id="customer-telefone" placeholder="Digite o telefone do cliente">
     <button onclick="addCustomer()">Cadastrar Cliente</button>
+</div>
 
-    <h2>Agendamento do Uso da Máquina de Lavar</h2>
+<div class="agendamentoStyle">
+
+    <h1>Agendamento do Uso da Máquina de Lavar</h1>
     <label for="machine-select">Selecione uma máquina:</label>
     <select id="machine-select">
     </select>
@@ -67,9 +77,9 @@
     </select>
     <button onclick="scheduleUsage()">Agendar Uso</button>
 
-    <h2>Promoções e Descontos</h2>
+    <h1>Promoções e Descontos</h1>
     <p>Clientes cadastrados receberão descontos especiais em seu aniversário!</p>
-
-    
+</div>
+    </div>
 </body>
 </html>
