@@ -1,0 +1,13 @@
+body{
+    display: table;
+background-image: url(money-laundry.gif);
+background-position-x: center;
+background-position-y: center;
+width: 90%;
+height: 90vh;
+padding: 100px 0;
+background-position: 40% 50%;
+background-size: cover;
+background-repeat: no-repeat;
+color: white;
+}
