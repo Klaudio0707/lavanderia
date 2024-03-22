@@ -30,7 +30,7 @@ background-size: auto;
 
 }
 
-.buttonProduto,.buttonRemover,.buttonCadastrar,.buttonCliente,.buttonAgendar{
+#buttonProduto,#buttonRemover,.buttonCadastrar,.buttonCliente,.buttonAgendar{
     background-color: #3700ff; /* Cor vermelha */
     color: #ffffff; /* Cor do texto branco */
     border: none; /* Remover a borda */
