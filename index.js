@@ -1,82 +1,111 @@
-// Initialize variables
 let productTable = document.getElementById("tabelaProduto");
-let machineTable = document.getElementById("machine-select");
-let customerTable = document.getElementById("customer-select");
+let machineSelect = document.getElementById("machine-select");
+let customerSelect = document.getElementById("customer-select");
 let totalStock = 0;
 
-// Function to add product to the table
+// Função para adicionar produto à tabela
 function addProduct() {
-  let productName = document.getElementById("product-name").value;
-  let productQuantity = document.getElementById("product-quantity").value;
-  totalStock += parseInt(productQuantity);
+    let productName = document.getElementById("product-name").value;
+    let productQuantity = document.getElementById("product-quantity").value;
 
-  let newRow = productTable.insertRow(-1);
-  newRow.insertCell(0).innerHTML = productName;
-  newRow.insertCell(1).innerHTML = productQuantity;
+    if (productName && productQuantity) {
+        let newRow = productTable.insertRow();
+        let cell1 = newRow.insertCell(0);
+        let cell2 = newRow.insertCell(1);
+        cell1.innerHTML = productName;
+        cell2.innerHTML = productQuantity;
 
-  document.getElementById("total-stock").innerHTML = totalStock;
+        totalStock += parseInt(productQuantity);
+        document.getElementById("total-stock").innerHTML = totalStock;
 
-  // Clear input fields
-  document.getElementById("product-name").value = "";
-  document.getElementById("product-quantity").value = "";
+        clearProductFields();
+    } else {
+        alert("Por favor, preencha o nome e a quantidade do produto.");
+    }
 }
 
-// Function to remove product from the table
+// Função para limpar campos do produto
+function clearProductFields() {
+    document.getElementById("product-name").value = "";
+    document.getElementById("product-quantity").value = "";
+}
+
+// Função para remover produto da tabela
 function removeProduct() {
-  if (productTable.rows.length > 1) {
-    totalStock -= parseInt(productTable.rows[1].cells[1].innerHTML);
-    productTable.deleteRow(1);
-
-    document.getElementById("total-stock").innerHTML = totalStock;
-  }
+    let rowCount = productTable.rows.length;
+    if (rowCount > 1) {
+        let lastRow = productTable.rows[rowCount - 1];
+        let quantityToRemove = parseInt(lastRow.cells[1].innerHTML);
+        totalStock -= quantityToRemove;
+        productTable.deleteRow(rowCount - 1);
+        document.getElementById("total-stock").innerHTML = totalStock;
+    } else {
+        alert("Não há produtos para remover.");
+    }
 }
 
-// Function to add machine to the select element
+// Função para adicionar máquina à lista de seleção
 function addMachine() {
-  let machineName = document.getElementById("machine-name").value;
-  let machineRate = document.getElementById("machine-rate").value;
+    let machineName = document.getElementById("machine-name").value;
+    let machineRate = document.getElementById("machine-rate").value;
 
-  let newOption = document.createElement("option");
-  newOption.value = machineName;
-  newOption.innerHTML = machineName + " - R$ " + machineRate + "/h";
+    if (machineName && machineRate) {
+        let option = document.createElement("option");
+        option.text = `${machineName} - R$ ${machineRate}/h`;
+        machineSelect.add(option);
 
-  machineTable.appendChild(newOption);
-
-  // Clear input fields
-  document.getElementById("machine-name").value = "";
-  document.getElementById("machine-rate").value = "";
+        clearMachineFields();
+    } else {
+        alert("Por favor, preencha o nome e a tarifa da máquina.");
+    }
 }
 
-// Function to add customer to the select element
+// Função para limpar campos da máquina
+function clearMachineFields() {
+    document.getElementById("machine-name").value = "";
+    document.getElementById("machine-rate").value = "";
+}
+
+// Função para adicionar cliente à lista de seleção
 function addCustomer() {
-  let customerName = document.getElementById("customer-name").value;
-  let customerEmail = document.getElementById("customer-email").value;
-  let customerPhone = document.getElementById("customer-telefone").value;
+    let customerName = document.getElementById("customer-name").value;
+    let customerEmail = document.getElementById("customer-email").value;
+    let customerPhone = document.getElementById("customer-telefone").value;
 
-  let newOption = document.createElement("option");
-  newOption.value = customerName;
-  newOption.innerHTML = customerName + " - " + customerEmail + " - " + customerPhone;
+    if (customerName && customerEmail && customerPhone) {
+        let option = document.createElement("option");
+        option.text = `${customerName} - ${customerEmail} - ${customerPhone}`;
+        customerSelect.add(option);
 
-  customerTable.appendChild(newOption);
-
-  // Clear input fields
-  document.getElementById("customer-name").value = "";
-  document.getElementById("customer-email").value = "";
-  document.getElementById("customer-telefone").value = "";
+        clearCustomerFields();
+    } else {
+        alert("Por favor, preencha todos os campos do cliente.");
+    }
 }
 
-// Function to schedule machine usage
+// Função para limpar campos do cliente
+function clearCustomerFields() {
+    document.getElementById("customer-name").value = "";
+    document.getElementById("customer-email").value = "";
+    document.getElementById("customer-telefone").value = "";
+}
+
+// Função para agendar uso da máquina
 function scheduleUsage() {
-  let selectedMachine = machineTable.value;
-  let usageTime = document.getElementById("usage-time").value;
-  let selectedCustomer = customerTable.value;
+    let selectedMachine = machineSelect.value;
+    let usageTime = document.getElementById("usage-time").value;
+    let selectedCustomer = customerSelect.value;
 
-  // TODO: Implement functionality to schedule machine usage
+    // Implemente a lógica de agendamento aqui
+    alert(`Máquina: ${selectedMachine}, Tempo de Uso: ${usageTime}, Cliente: ${selectedCustomer}`);
 
-  // Clear input fields
-  document.getElementById("usage-time").value = "";
+    // Limpa o campo de tempo de uso
+    document.getElementById("usage-time").value = "";
 }
 
-// Add event listeners to buttons
+// Adiciona event listeners aos botões
 document.getElementById("buttonProduto").addEventListener("click", addProduct);
 document.getElementById("buttonRemover").addEventListener("click", removeProduct);
+document.getElementById("buttonCadastrar").addEventListener("click", addMachine);
+document.getElementById("buttonCliente").addEventListener("click", addCustomer);
+document.getElementById("buttonAgendar").addEventListener("click", scheduleUsage);
