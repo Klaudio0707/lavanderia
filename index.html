@@ -14,13 +14,13 @@
     <div class="ControleStyle">
     <h1>Controle de Estoque e Máquinas de Lavanderia</h1>
     <h2>Controle de Estoque</h2>
-    <label for="product-name">Nome do Produto:</label><br>
-    <input type="text" id="product-name" placeholder="Digite o nome do produto"><br>
-    <label for="product-quantity">Quantidade:</label><br>
-    <input type="number" id="product-quantity" placeholder="Digite a quantidade"><br>
+    <label for="product-name">Nome do Produto:</label>
+    <input type="text" id="product-name" placeholder="Digite o nome do produto">
+    <label for="product-quantity">Quantidade:</label>
+    <input type="number" id="product-quantity" placeholder="Digite a quantidade">
     
-    <button id="buttonProduto">Adicionar ao Estoque</button>
-    <button id="buttonRemover">Remover do Estoque</button><br>
+    <button class="buttonProduto">Adicionar ao Estoque</button>
+    <button class="buttonRemover">Remover do Estoque</button><br>
     <h2>Estoque</h2>
     <table id="tabelaP">
 <tr>
@@ -50,7 +50,7 @@
     <input type="text" id="machine-name" placeholder="Digite o nome da máquina">
     <label for="machine-rate">Tarifa por hora:</label>
     <input type="number" id="machine-rate" placeholder="Digite a tarifa por hora">
-    <button onclick="addMachine()">Cadastrar Máquina</button>
+    <button class= "buttonCadastrar"onclick="addMachine()">Cadastrar Máquina</button>
 
 <div class="cadastroStyle">
 
@@ -61,7 +61,7 @@
     <input type="email" id="customer-email" placeholder="Digite o e-mail do cliente">
     <label for="customer-telefone">telefone:</label>
     <input type="telefone" id="customer-telefone" placeholder="Digite o telefone do cliente">
-    <button onclick="addCustomer()">Cadastrar Cliente</button>
+    <button class="buttonCliente" onclick="addCustomer()">Cadastrar Cliente</button>
 </div>
 
 <div class="agendamentoStyle">
@@ -75,7 +75,7 @@
     <label for="customer-select">Selecione um cliente:</label>
     <select id="customer-select">
     </select>
-    <button onclick="scheduleUsage()">Agendar Uso</button>
+    <button class="buttonAgendar" onclick="scheduleUsage()">Agendar Uso</button>
 
     <h1>Promoções e Descontos</h1>
     <p>Clientes cadastrados receberão descontos especiais em seu aniversário!</p>
