@@ -1,30 +1,53 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200; 1.300;1.400;1.500;1.600;1.700;1.800;1.900&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=Nosifer&family=Rubik+Moonrocks&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nosifer&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nosifer&family=Rampart+One&family=Rubik+Moonrocks&display=swap');
 
 
 body{
-font-family: "Kanit", sans-serif;
-font-weight: 300;
+
+font-weight: 400;
 font-style: normal;   
 display: table;
-background-image: url(-fotolavanderia.jpg);
+
 background-repeat: no-repeat;
 width: 100%;
 padding: 100px 0;
 background-position: 40% 50%;
 background-size: cover;
-color: rgb(36, 3, 3);
+color: rgb(5, 20, 68);
 background-position: center;
-text-shadow: #8d3b0571 2px 3px 2px;
+text-shadow: #05668d71 ;
 
+background: 
+    linear-gradient(45deg, #4d7a94 25%, transparent 25%), 
+    linear-gradient(-45deg, #4d7a94 25%, transparent 25%), 
+    linear-gradient(45deg, transparent 75%, #4d7a94 75%), 
+    linear-gradient(-45deg, transparent 75%, #4d7a94 75%);
+background-size: 45px 45px;
+background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+background-repeat: no-repeat;
+background-size: auto;
 
 }
 
+.buttonProduto,.buttonRemover,.buttonCadastrar,.buttonCliente,.buttonAgendar{
+    background-color: #3700ff; /* Cor vermelha */
+    color: #ffffff; /* Cor do texto branco */
+    border: none; /* Remover a borda */
+    padding: 5px 20px; /* Espaçamento interno */
+    font-size: 12px; /* Tamanho da fonte */
+    border-radius: 5px; /* Borda arredondada */
+    cursor: pointer; 
+}
 
 h1,h3,h4,h5{
-
+/*font-family: "Nosifer", sans-serif;*/
+/*font-family: "Rubik Moonrocks", sans-serif;*/
+font-family: "Rampart One", sans-serif;
 align-items: center;
 text-align: center;
+
+color: #292474,#ffffff;
+
 
 }
